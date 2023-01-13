@@ -33,3 +33,6 @@ typings/
 
 # Yarn Integrity file
 .yarn-integrity
+
+# package-lock.json
+package-lock.json
