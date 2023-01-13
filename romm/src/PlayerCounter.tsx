@@ -4,12 +4,12 @@ import * as io from "socket.io-client";
 interface PlayerCounterProps {
   connectedPlayers: number;
 }
-
+const serverAddress: string = "http://192.168.0.242:3000";
 const PlayerCounter: React.FunctionComponent<PlayerCounterProps> = ({
   connectedPlayers,
 }) => {
   const [players, setPlayers] = React.useState(connectedPlayers);
-  const socket = io.connect("http://192.168.0.242:3000");
+  const socket = io.connect(serverAddress);
 
   React.useEffect(() => {
     socket.on("players", (newPlayers: number) => {
