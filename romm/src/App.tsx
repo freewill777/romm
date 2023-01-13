@@ -1,21 +1,12 @@
 import { useState, useEffect } from "react";
-import reactLogo from "./assets/react.svg";
 import "./App.css";
-import { socket } from "./socket";
+import PlayerClient from "./PlayerClient";
 function App() {
   const [connectedPlayers, setConnectedPlayers] = useState(0);
-
-  useEffect(() => {
-    socket.on("players", (numPlayers: number) => {
-      setConnectedPlayers(numPlayers);
-    });
-    return () => {
-      socket.off("players");
-    };
-  }, []);
-
+  console.log("XXX");
   return (
     <div className="App">
+      <PlayerClient setConnectedPlayers={setConnectedPlayers} />
       Players connected: {connectedPlayers}
       <div>
         <a href="https://reactjs.org" target="_blank">
