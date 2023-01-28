@@ -13,7 +13,7 @@ function PlayerClient({ setConnectedPlayers }: PlayerClientProps): JSX.Element {
     return () => {
       socket.off("players");
     };
-  });
+  }, [setConnectedPlayers]);
   return <></>;
 }
 
